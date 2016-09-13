@@ -1,4 +1,17 @@
-<div class="panel panel-default">
+
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" [(ngModel)]="username" placeholder="Enter a Github username..." (keyup)="searchUser()">
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="user">
+    
+
+    <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">{{user.name}}</h3>
   </div>
@@ -46,4 +59,5 @@
         <hr>
       </div>  
   </div>
+</div>
 </div>

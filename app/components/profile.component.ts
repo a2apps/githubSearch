@@ -8,7 +8,13 @@ import { GithubService } from '../services/github.service';
 export class ProfileComponent { 
     user[];
     repos[];
+    username: string;
+    flag: boolean
     constructor(private _githubService: GithubService){
+        this.user = false;
+    }
+    searchUser(){
+        this._githubService.updateUser(this.username);
         this._githubService.getUser().subscribe(user =>{
             console.log(user);
             this.user=user;
